@@ -3,6 +3,10 @@ import{
     MeshStandardMaterial,
     WebGLRenderer,
     Scene,
+    Mesh,
+    Material,
+    BoxBufferGeometry,
+    MeshBasicMaterial,
 } from 'three';
 import{OrbitControls} from './vendor/three/examples/jsm/controls/OrbitControls.js';
 
@@ -15,3 +19,14 @@ const far = 100; // the far clipping plane
 const camera = new PerspectiveCamera(fov, aspect, near, far);
 
 const renderer = new WebGLRenderer();
+
+const mesh = new Mesh(geometry, material);
+
+//BoxBufferGeometry
+const length = 2;
+const width = 2;
+const depth = 2;
+
+const geometry = new BoxBufferGeometry(length, width, depth);
+
+const material = new MeshBasicMaterial();
